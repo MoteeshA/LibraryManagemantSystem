@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    All Books
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">All Books</h2>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>ISBN</th>
+                                    <th>Published Date</th>
+                                    <th>Genre</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for book in books %}
+                                    <tr>
+                                        <td>{{ book[1] }}</td>
+                                        <td>{{ book[2] }}</td>
+                                        <td>{{ book[3] }}</td>
+                                        <td>{{ book[4] }}</td>
+                                        <td>{{ book[5] }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
